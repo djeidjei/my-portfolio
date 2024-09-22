@@ -1,0 +1,444 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    padding: 0 20px;
+    line-height: 1.6;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 24px;
+    /* Match header's font size */
+    font-weight: 100;
+    /* Match the weight of "Ivan Flugelman" */
+    color: #333;
+    margin: 20px 0;
+    padding: 0 20px;
+    /* Ensure same padding as header */
+    box-sizing: border-box;
+}
+
+/* Header Styles */
+header {
+    padding-bottom: 20px;
+    padding: 10px 20px;
+    /* Padding already in use for internal spacing */
+    position: relative;
+    margin: 20px 0;
+    /* Required for the pseudo-element to position correctly */
+}
+
+header::before {
+    content: "";
+    /* Creates a blank element to act as the border */
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    /* Matches the padding on the left */
+    right: 20px;
+    /* Matches the padding on the right */
+    height: 1px;
+    /* Height of the horizontal line */
+    background-color: #ddd;
+    /* Color of the horizontal line */
+}
+
+/* Header Links */
+.header-container a {
+    color: #333;
+    /* Set a standard color for the header links */
+    text-decoration: none;
+    /* Remove the underline */
+}
+
+.header-container a:hover,
+.header-container a:focus {
+    text-decoration: none;
+    /* Ensure no underline on hover */
+    color: #007acc;
+    /* Optional: add a slight hover color if desired */
+}
+
+.header-container a:visited {
+    color: #333;
+    /* Ensure visited links stay the same color as normal links */
+}
+
+
+/* Header Container */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    /* Align name to left, email/blog to right */
+    align-items: center;
+    width: 100%;
+    padding: 10 20px;
+    /* Consistent padding with the grid */
+    box-sizing: border-box;
+    /* Ensure the padding is applied correctly */
+}
+
+/* Left Section (Name) */
+.left-section h1 {
+    font-size: 24px;
+    font-weight: 100;
+    color: #333;
+    margin: 0;
+    padding-left: 0;
+    /* Ensure the left alignment matches exactly */
+}
+
+/* Right Section (Email and Blog Links) */
+.right-section {
+    display: flex;
+    gap: 20px;
+    /* Space between links */
+}
+
+.right-section a {
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+}
+
+.right-section a:hover {
+    text-decoration: underline;
+}
+
+/* Intro Section */
+.intro {
+    margin: 40px auto;
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    padding: 0 20px;
+    /* Padding to prevent touching edges */
+}
+
+/* Portfolio Grid Styles */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Always 2 columns on larger screens */
+    gap: 15px;
+    /* Reduce gap between grid items */
+    margin-top: 20px;
+    padding: 10px 20px;
+    /* Padding on the sides to prevent grid touching edges */
+    width: 100%;
+    /* Full width */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        /* Stack grid items vertically on smaller screens */
+    }
+
+    .intro {
+        font-size: 16px;
+        /* Smaller font size for better readability on small screens */
+    }
+}
+
+
+.grid-item {
+    text-align: center;
+}
+
+/* Image Container */
+.image-container {
+    position: relative;
+    overflow: hidden;
+    /* Ensure the image and overlay stay within the container */
+    border-radius: 12px;
+    /* Keep consistent shape */
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    /* Maintain 16:9 aspect ratio */
+    display: block;
+}
+
+/* Portfolio Image */
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensure the image fills the container */
+    border-radius: 12px;
+    /* Match the border-radius of the container */
+    transition: transform 0.3s ease-in-out;
+    /* Smooth zoom effect */
+}
+
+/* Overlay */
+.image-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    z-index: 1;
+    /* Ensure overlay stays on top */
+}
+
+/* Hover Effects: Image Zoom and Overlay */
+.image-container:hover img {
+    transform: scale(1.05);
+    /* Smooth zoom effect */
+}
+
+.image-container:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Darken overlay on hover */
+    opacity: 1;
+    /* Show the overlay */
+}
+
+/* Text on the overlay */
+.image-container .open-project-text {
+    color: #fff;
+    font-size: 18px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 10;
+    /* Ensure text stays on top */
+}
+
+.image-container:hover .open-project-text {
+    opacity: 1;
+    /* Show text on hover */
+}
+
+.grid-item h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    font-weight: 300;
+}
+
+.grid-item p {
+    margin: 5px 0;
+    font-weight: 300;
+}
+
+
+/* Footer Styles */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+}
+
+/* Typography for the about section */
+.about-section {
+    margin-top: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Blog Post List (for blog index page) */
+.blog-list {
+    list-style-type: none;
+    /* Remove bullets */
+    padding: 0;
+    margin: 0;
+}
+
+.blog-list li {
+    margin-bottom: 30px;
+    /* Space between posts */
+    padding: 20px;
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    /* Subtle drop shadow to match individual posts */
+    transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    /* Pointer for clickable post */
+}
+
+.blog-list li:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Slightly stronger shadow on hover */
+}
+
+/* Make the entire post clickable */
+.blog-list li a {
+    text-decoration: none;
+    /* Remove underline */
+    color: inherit;
+    /* Inherit color from the parent (li) */
+    display: block;
+    /* Make the entire link take up the space */
+    width: 100%;
+    /* Ensure the link fills the li */
+    height: 100%;
+    /* Ensure the link fills the li */
+}
+
+/* Blog Post Titles in Blog List */
+.blog-list li h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Blog Post Title Styling */
+.post-title {
+    font-size: 22px;
+    font-weight: 100;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Date Styling */
+.blog-list li small {
+    display: block;
+    font-size: 12px;
+    /* Small font size */
+    color: #777;
+    /* Light color */
+    text-transform: uppercase;
+    /* Uppercase for date */
+    letter-spacing: 1px;
+    /* Slight letter spacing */
+    margin-top: 0;
+    /* No top margin */
+}
+
+/* Blog Post Content */
+.blog-post {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    line-height: 1.8;
+}
+
+.blog-post h1 {
+    font-size: 40px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    color: #333;
+    padding: 0px 0px;
+}
+
+.blog-post .post-date {
+    font-size: 12px;
+    /* Make the date smaller */
+    color: #777;
+    /* Light color for the date */
+    margin-top: 0;
+    /* No margin above the date */
+    margin-bottom: 20px;
+    /* Space below the date */
+    text-transform: uppercase;
+    /* Convert text to all caps */
+    letter-spacing: 1px;
+    /* Optional: Add letter spacing for a cleaner look */
+}
+
+.blog-post p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.blog-post img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.blog-post blockquote {
+    border-left: 4px solid #ddd;
+    padding-left: 20px;
+    font-style: italic;
+    color: #666;
+    margin: 20px 0;
+}
+
+.blog-post a {
+    color: #898989;
+    /* Accent color for links */
+    text-decoration: none;
+}
+
+.blog-post a:hover {
+    text-decoration: underline;
+}
+
+/* Smooth Hover Effect for Links */
+a {
+    color: #8f8f8f;
+    /* Accent color */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #005f99;
+    /* Darken on hover */
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+
+    /* Adjust blog post max-width on smaller screens */
+    .blog-post {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    /* Make the blog post titles smaller */
+    .blog-post h1 {
+        font-size: 24px;
+    }
+
+    /* Reduce spacing in blog post list */
+    .blog-list li {
+        padding: 15px;
+    }
+
+    .blog-list li a {
+        font-size: 18px;
+    }
+}

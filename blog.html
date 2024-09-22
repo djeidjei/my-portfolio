@@ -1,0 +1,16 @@
+---
+layout: default
+title: "Blog"
+---
+
+<h1>Blog Posts</h1>
+<ul class="blog-list">
+    {% for post in site.posts reversed %} <!-- Use "reversed" to ensure newest posts come first -->
+    <li>
+        <a href="{{ post.url }}">
+            <h2 class="post-title">{{ post.title }}</h2>
+            <small>{{ post.date | date: "%B %d, %Y" }}</small>
+        </a>
+    </li>
+    {% endfor %}
+</ul>
