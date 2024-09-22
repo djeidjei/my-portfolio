@@ -104,14 +104,24 @@ header::before {
     /* Space between links */
 }
 
+/* Remove blue color, underline, and animations for right-section links */
 .right-section a {
-    font-size: 16px;
     color: #333;
+    /* Set the color of the links to a neutral color (dark gray) */
     text-decoration: none;
+    /* Remove the underline */
+    font-weight: normal;
+    /* Optional: adjust font weight if needed */
+    transition: none;
+    /* Remove any animation or transition effects */
 }
 
+/* Remove hover effects for right-section links */
 .right-section a:hover {
-    text-decoration: underline;
+    color: #333;
+    /* Keep the color the same on hover */
+    text-decoration: none;
+    /* No underline on hover */
 }
 
 /* Intro Section */
