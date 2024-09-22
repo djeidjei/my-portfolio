@@ -109,8 +109,6 @@ header::before {
     color: #333;
     /* Set the color of the links to a neutral color (dark gray) */
     text-decoration: none;
-    /* Remove the underline */
-    font-weight: normal;
     /* Optional: adjust font weight if needed */
     transition: none;
     /* Remove any animation or transition effects */
