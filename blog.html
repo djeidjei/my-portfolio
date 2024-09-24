@@ -4,11 +4,13 @@ title: "Blog"
 ---
 
 <h1>Blog Posts</h1>
+
 <ul class="blog-list">
-    {% for post in site.posts reversed %} <!-- Use "reversed" to ensure newest posts come first -->
+    {% assign posts = site.posts | sort: 'date' | reverse %} <!-- Sort by date and reverse -->
+    {% for post in posts %}
     <li>
         <a href="{{ post.url | relative_url }}">
-            <h2 class="post-title">{{ post.title }}</h2>
+            <h2>{{ post.title }}</h2>
             <small>{{ post.date | date: "%B %d, %Y" }}</small>
         </a>
     </li>
