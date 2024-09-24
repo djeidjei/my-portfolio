@@ -9,7 +9,7 @@
 
 body {
     background-color: #fff;
-    color: #333;
+    color: #555;
     padding: 0 20px;
     line-height: 1.6;
     box-sizing: border-box;
@@ -17,14 +17,20 @@ body {
 
 h1 {
     font-size: 32px;
-    /* Match header's font size */
     font-weight: 100;
-    /* Match the weight of "Ivan Flugelman" */
-    color: #333;
+    color: #555;
     margin: 20px 0;
     padding: 0 20px;
     /* Ensure same padding as header */
     box-sizing: border-box;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    padding: 0 20px;
+    margin: 20px 0;
 }
 
 /* Header Styles */
@@ -50,6 +56,12 @@ header::before {
     /* Height of the horizontal line */
     background-color: #ddd;
     /* Color of the horizontal line */
+}
+
+img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 /* Header Links */
@@ -91,7 +103,7 @@ header::before {
 .left-section h1 {
     font-size: 24px;
     font-weight: 100;
-    color: #333;
+    color: #555;
     margin: 0;
     padding-left: 0;
     /* Ensure the left alignment matches exactly */
@@ -130,7 +142,7 @@ header::before {
     font-size: 18px;
     line-height: 1.8;
     color: #555;
-    padding: 0 20px;
+    padding: 0 0px;
     /* Padding to prevent touching edges */
 }
 
@@ -454,6 +466,7 @@ a:hover {
 /* Ensure main content aligns with the header */
 .project-post {
     width: 100%;
+    color: #555;
     /* Full width of the screen */
     padding: 0 20px;
     /* Same padding as the header */
@@ -464,7 +477,7 @@ a:hover {
 /* Remove font weight (no bold) */
 .project-post h1 {
     font-size: 32px;
-    color: #333;
+    color: #555;
     margin-top: 20px;
     margin-bottom: 10px;
     padding: 0px 0px;
@@ -485,11 +498,12 @@ a:hover {
 
 /* Main body content (paragraphs) */
 .project-post p {
+    color: #555;
     font-size: 18px;
     font-weight: 100px;
     line-height: 1.6;
-    color: #000000;
     margin-bottom: 20px;
+    padding: 0px 0px;
 }
 
 /* Ensure images align with the rest of the content */
@@ -505,5 +519,6 @@ a:hover {
     text-align: center;
     line-height: 1.2;
     color: inherit;
-    margin: 20 auto;
+    margin: 0 auto;
+    padding: 0px 0px;
 }

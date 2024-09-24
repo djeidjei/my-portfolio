@@ -183,4 +183,3 @@ title: "Portfolio"
         <p>(2024)</p>
     </div>
 </section>
-</section>
