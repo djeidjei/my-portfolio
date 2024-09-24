@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+</head>
+
+<body>
+
+    <!-- Include shared header -->
+    {% include header.html %}
+
+    <!-- Check if two_column_layout is enabled in the front matter -->
+    {% if page.two_column_layout %}
+    <!-- Two-column layout -->
+    <main class="project-post two-column-layout">
+        <h1>{{ page.title }}</h1>
+        <p>{{ content }}</p>
+    </main>
+    {% else %}
+    <!-- Default single-column layout -->
+    <main class="project-post">
+        <h1>{{ page.title }}</h1>
+        <div class="project-content">
+            {{ content }}
+        </div>
+    </main>
+    {% endif %}
+
+    <!-- Include shared footer -->
+    {% include footer.html %}
+
+</body>
+
+</html>
